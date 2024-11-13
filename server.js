@@ -7,6 +7,8 @@ const roleRoutes = require('./routes/role.routes');
 const permissionRoutes = require('./routes/permission.routes');
 const keywordRoutes = require('./routes/keyword.routes');
 const projectRoutes = require('./routes/project.routes'); 
+const folderRoutes = require('./routes/folder.routes');
+const testCaseRoutes = require('./routes/testCase.routes');
 dotenv.config();
 
 const app = express();
@@ -22,6 +24,8 @@ app.use('/api/roles', roleRoutes); // Rutas para roles
 app.use('/api/permissions', permissionRoutes);
 app.use('/api/keywords', keywordRoutes);
 app.use('/api/projects', projectRoutes);
+app.use('/api/folders', folderRoutes);
+app.use('/api/testcases', testCaseRoutes);
 
 // Conexión a MongoDB
 mongoose.connect(process.env.MONGO_URI)
